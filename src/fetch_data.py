@@ -6,72 +6,10 @@ import os
 BASE_URL = "https://data360api.worldbank.org/data360/"
 OUTPUT_DIR = "../data/raw" 
 
-INDICATOR_ENDPOINTS= {
-    "Women_Justify_Beating_Wife": {
-        "database_id": "WB_SSGD",
-        "indicatorid": "WB_SSGD_PCT_WOMEN_JUSTIFY_BEATING"
-    },
-    "Women_Justify_Refusing_Sex": {
-        "database_id": "WB_GS",
-        "indicatorid": "WB_GS_SG_RSX"
-    },
-    "Female_Labor_Force_Participation": {
-        "database_id": "WB_WDI",
-        "indicatorid": "WB_WDI_SL_TLF_CACT_FE_ZS"
-    },
-    "Women_in_Senior_Management": {
-        "database_id": "WB_WDI",
-        "indicatorid": "WB_WDI_SL_EMP_SMGT_FE_ZS"
-    },
-    "Firms_with_Female_Ownership": {
-        "database_id": "WB_GS",
-        "indicatorid": "WB_GS_IC_FRM_FEMO_ZS"
-    },
-    "Women_in_Parliament_Seats": {
-        "database_id": "WB_WDI",
-        "indicatorid": "WB_WDI_SG_GEN_PARL_ZS"
-    },
-    "Women_in_Ministerial_Positions": {
-        "database_id": "WB_GS",
-        "indicatorid": "WB_GS_SG_GEN_MNST_ZS"
-    },
-    "Women_Never_Sought_Help_for_Violence": {
-        "database_id": "WB_GS",
-        "indicatorid": "WB_GS_SG_VAW_HLPV_NV_ZS"
-    },
-    "Women_Experienced_IPV": {
-        "database_id": "WB_GS",
-        "indicatorid": "WB_GS_SG_VAW_IPVE_ZS"
-    },
-    "Women_Subjected_to_Violence_Last_12_Months": {
-        "database_id": "WB_GS",
-        "indicatorid": "WB_GS_SG_VAW_1549_ZS"
-    },
-    "Women_Married_by_Age_15": {
-        "database_id": "WB_HNP",
-        "indicatorid": "WB_HNP_SP_M15_ZS"
-    },
-    "Households_with_Female_Head": {
-        "database_id": "WB_GS",
-        "indicatorid": "WB_GS_SP_HOU_FEMA_ZS"
-    },
-    "Women_with_Demand_for_Family_Planning": {
-        "database_id": "WB_WDI",
-        "indicatorid": "WB_WDI_SH_FPL_SATM_ZS"
-    },
-    "Contraceptive_Prevalence": {
-        "database_id": "WB_WDI",
-        "indicatorid": "WB_WDI_SP_DYN_CONU_ZS"
-    },
-    "Persistence_to_Grade_5_Female": {
-        "database_id": "WB_WDI",
-        "indicatorid": "WB_WDI_SE_PRM_PRS5_FE_ZS"
-    },
-    "Fertility_Rate": {
-        "database_id": "WB_SSGD",
-        "indicatorid": "WB_SSGD_FERTILITY_RATE"
-    }
-}
+JSON_FILE_PATH = "INDICATOR_ENDPOINTS.json"
+
+with open(JSON_FILE_PATH, "r", encoding="utf-8") as f:
+    INDICATOR_ENDPOINTS = json.load(f)
 
 
 def fetch_data(indicator_name, database_id, indicatorid, skip_count=0):
