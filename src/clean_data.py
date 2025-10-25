@@ -15,13 +15,14 @@ def load_json_files(folder_path):
 
     dfs = {}
     count=0
+    
     for file in os.listdir(folder_path):
         if file.endswith(".json"):
 
             count += 1
 
             path = os.path.join(folder_path, file)
-            name = file.replace(".json", "")  # clean name for dict key
+            name = file.replace(".json", "")  
             dfs[name] = load_json(path)
             print(f"Loaded {name} with {dfs[name].count()} rows")
 

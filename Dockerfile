@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY src .
 
-CMD ["python", "fetch_data.py"]
+CMD ["python", "main.py"]
