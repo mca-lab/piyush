@@ -1,11 +1,11 @@
 *.Rhistory
 .DS_Store
 .idea
-src\__pycache__\*
-notebooks\.ipynb_checkpoints
-data\processed\*
-data\raw\*
 
-!data\processed\.gitkeep
-!data\raw\.gitkeep
-!data\.gitkeep
+src/__pycache__/*
+notebooks/.ipynb_checkpoints
+
+data/processed/*
+data/raw/*
+
+src/INDICATOR_ENDPOINTS.json
