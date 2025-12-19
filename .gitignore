@@ -8,4 +8,3 @@ notebooks/.ipynb_checkpoints
 data/processed/*
 data/raw/*
 
-src/INDICATOR_ENDPOINTS.json
